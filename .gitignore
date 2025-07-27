@@ -1,0 +1,31 @@
+# Kubernetes temporary files
+*.tmp
+*.swp
+*~
+
+# Helm charts
+charts/*.tgz
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets (important!)
+*secret*.yaml
+*secret*.yml
+.env
+*.key
+*.pem
+
+# Terraform (if you use it later)
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ArgoCD local configs
+.argocd/
