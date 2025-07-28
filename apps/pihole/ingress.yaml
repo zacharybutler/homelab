@@ -9,9 +9,9 @@ spec:
   tls:
   - hosts:
     - pihole.butlercasa.com
-    secretName: pihole-tls-secret  # Reference your Let's Encrypt certificate
+    secretName: butlercasa-wildcard-tls-secret
   rules:
-  - host: pihole.butlercasa.com  # Changed from pihole.homelab.local
+  - host: pihole.butlercasa.com
     http:
       paths:
       - path: /
@@ -20,4 +20,4 @@ spec:
           service:
             name: pihole-web
             port:
-              number: 80  # Changed from 443 to 80 - let Traefik handle TLS termination
+              number: 80
