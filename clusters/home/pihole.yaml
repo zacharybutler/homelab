@@ -6,12 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://mojo2600.github.io/pihole-kubernetes/'
-    chart: pihole
-    targetRevision: 2.31.0
+    repoURL: 'https://github.com/zacharybutler/homelab.git'
+    path: apps/networking/pihole
     helm:
+      chart: pihole
+      repo: https://mojo2600.github.io/pihole-kubernetes/
+      targetRevision: 2.31.0
       valueFiles:
-        - apps/networking/pihole/values.yaml
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: networking
