@@ -7,10 +7,13 @@ spec:
   selector:
     app: pihole
   ports:
-  - name: web
+  - name: http
     port: 80
     targetPort: 80
-  type: ClusterIP
+  - name: https
+    port: 443
+    targetPort: 443
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service
