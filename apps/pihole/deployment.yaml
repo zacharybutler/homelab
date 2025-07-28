@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pihole
+  namespace: pihole
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
+  template:
+    metadata:
+      labels:
+        app: pihole
+    spec:
+      containers:
+      - name: pihole
+        image: pihole/pihole:latest
+        env:
+        - name: WEBPASSWORD
+          value: "password"
+        - name: TZ
+          value: "America/Chicago"
+        ports:
+        - containerPort: 80
+        - containerPort: 53
+          protocol: UDP
+        - containerPort: 53
+          protocol: TCP
