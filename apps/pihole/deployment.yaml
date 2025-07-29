@@ -21,6 +21,12 @@ spec:
           value: "password"
         - name: TZ
           value: "America/Chicago"
+        - name: PIHOLE_DNS_
+          value: "1.1.1.1;8.8.8.8"
+        - name: FTLCONF_dns_listeningMode
+          value: "SINGLE"
+        - name: FTLCONF_dns_queryLogging
+          value: "true"
         ports:
         - containerPort: 80
         - containerPort: 443
