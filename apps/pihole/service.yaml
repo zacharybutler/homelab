@@ -33,3 +33,4 @@ spec:
     targetPort: 53
     protocol: UDP
   type: LoadBalancer
+  externalTrafficPolicy: Local
